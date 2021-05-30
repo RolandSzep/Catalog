@@ -1,0 +1,80 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$catalog-palette: (
+ 50: #e5f1f8,
+ 100: #c0ddef,
+ 200: #9cc8e4,
+ 300: #7bb3d8,
+ 400: #65a3d1,
+ 500: #5495ca,
+ 600: #4b88be,
+ 700: #4176ac,
+ 800: #38669a,
+ 900: #2b4a7a,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: white,
+   500: white,
+   600: white,
+   700: white,
+   800: white,
+   900: white
+ )
+);
+
+$my-app-primary: mat-palette($catalog-palette);
+$my-app-accent:  mat-palette($catalog-palette, 500, 900, A100);
+$my-app-warn:    mat-palette($mat-deep-orange);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
+
+html,
+body {
+  height: 100%;
+  background: #2d313a;
+  color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: stretch;
+}
+
+.reg-card,
+.log-card {
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+
+  .reg-card,
+  .log-card {
+    max-width: 33em;
+    min-height: 40em;
+    height: auto;
+  }
+}
+
+.item {
+  flex: 1 1;
+  min-width: 250px;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

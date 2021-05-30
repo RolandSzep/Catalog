@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button [routerLink]="[ '/' ]">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Profil</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-container [formGroup]="form">
+
+  <mat-card class="margin-bottom">
+    <mat-card-header>
+      <mat-card-title>Felhasználói adatok</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <h3>E-mail</h3>
+      <mat-form-field class="max-width">
+        <input value="{{email}}" type="text" name="name" matInput formControlName="email">
+      </mat-form-field>
+      <h3>Név</h3>
+      <mat-form-field class="max-width">
+        <input value="{{name}}" type="text" name="name" matInput formControlName="name">
+      </mat-form-field>
+      <button mat-button color="accent" (click)="save()">Mentés</button>
+      <br>
+    </mat-card-content>
+  </mat-card>
+
+</app-container>

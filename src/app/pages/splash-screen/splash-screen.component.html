@@ -1,0 +1,12 @@
+<app-container>
+  <br>
+  <h2>Üdvözöljük a Katalóguskezelő webes felületén!</h2>
+  <h3>Válasszon az alábbi menüpontokból a kezdéshez.</h3>
+  <br>
+  <div class="splash-category">
+    <mat-card *ngFor="let item of pages" matRipple [matRippleColor]="item.color" appOnHover
+      [routerLink]="[ item.url ]">
+      {{item.title}}
+    </mat-card>
+  </div>
+</app-container>

@@ -1,0 +1,8 @@
+<mat-card *ngIf="category" appOnHover>
+  <mat-card-header>
+    <mat-card-title>{{category.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <a *ngIf="category.href" href="{{category.href}}">Kategórialink</a>
+  </mat-card-content>
+</mat-card>

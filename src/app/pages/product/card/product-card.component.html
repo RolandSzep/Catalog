@@ -1,0 +1,10 @@
+<mat-card *ngIf="product" appOnHover>
+  <mat-card-header>
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-subtitle>{{getProductCategory(product.category)}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{product.description}}</p>
+    <a *ngIf="product.href" href="{{product.href}}">Terméklink</a>
+  </mat-card-content>
+</mat-card>

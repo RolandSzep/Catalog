@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+  <h3>Termék felvétel</h3>
+  <mat-form-field class="max-width">
+    <mat-label>Név</mat-label>
+    <input matInput placeholder="Pl. Laptop" focus formControlName="name" required>
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Leírás</mat-label>
+    <textarea formControlName="description" matInput cdkTextareaAutosize
+      cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"></textarea>
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Link</mat-label>
+    <textarea formControlName="href" matInput cdkTextareaAutosize
+      cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Kategória</mat-label>
+    <mat-select formControlName="category" required>
+      <mat-option *ngFor="let item of list" [value]="item.name">
+          {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogRef.close()" class="margin-right">MÉGSEM</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">FELVÉTEL</button>
+  </div>
+</form>
